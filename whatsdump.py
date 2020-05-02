@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import argparse
@@ -225,7 +226,7 @@ def main():
 
     try:
         wa_emu.register_phone(msgstore_path, phone.country_code, phone.national_number, args.wa_verify, wa_code_callback)
-    except WaException, e:
+    except WaException as e:
         logger.error('Exception in verification: %s', e.reason)
         sys.exit(1)
 
